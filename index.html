@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Roshni Vora - Energy & Environmental Policy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Literata:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --text-primary: #1a1a1a;
-            --text-secondary: #666;
-            --accent: #2563eb;
-            --border: #e5e5e5;
-            --background: #ffffff;
+            --forest: #1a4d2e;
+            --sage: #4f6f52;
+            --earth: #8b7355;
+            --sand: #e8dcc4;
+            --cream: #faf8f3;
+            --charcoal: #2d2d2d;
+            --slate: #5a5a5a;
+            --accent-green: #2d5f3f;
+            --accent-amber: #d4a574;
         }
 
         * {
@@ -23,24 +27,45 @@
         }
 
         body {
-            font-family: 'DM Sans', sans-serif;
-            color: var(--text-primary);
-            background: var(--background);
-            line-height: 1.6;
+            font-family: 'Outfit', sans-serif;
+            color: var(--charcoal);
+            background: var(--cream);
+            line-height: 1.7;
             -webkit-font-smoothing: antialiased;
         }
 
+        .header-accent {
+            height: 6px;
+            background: linear-gradient(90deg, var(--forest) 0%, var(--sage) 50%, var(--earth) 100%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            animation: slideIn 0.6s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: scaleX(0);
+                transform-origin: left;
+            }
+            to {
+                transform: scaleX(1);
+            }
+        }
+
         .container {
-            max-width: 680px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 60px 24px;
+            padding: 80px 32px 60px;
             animation: fadeIn 0.8s ease-out;
         }
 
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -48,179 +73,367 @@
             }
         }
 
-        .avatar {
+        .hero {
+            text-align: left;
+            margin-bottom: 80px;
+            padding: 48px 0;
+            border-bottom: 2px solid var(--sage);
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
             width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 0 auto 32px;
-            display: block;
+            height: 2px;
+            background: var(--forest);
+            animation: expandLine 0.8s ease-out 0.3s backwards;
+        }
+
+        @keyframes expandLine {
+            from {
+                width: 0;
+            }
+            to {
+                width: 120px;
+            }
+        }
+
+        .avatar-section {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 32px;
+        }
+
+        .avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 12px;
             object-fit: cover;
-            border: 3px solid var(--border);
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            border: 4px solid var(--forest);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 8px 8px 0 var(--sand);
         }
 
         .avatar:hover {
-            transform: scale(1.05);
-            border-color: var(--accent);
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0 var(--sand);
+        }
+
+        .name-title {
+            flex: 1;
         }
 
         h1 {
-            font-family: 'Crimson Pro', serif;
-            font-size: 2.5rem;
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 8px;
-            letter-spacing: -0.02em;
+            font-family: 'Literata', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--forest);
+            margin-bottom: 12px;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
         }
 
         .tagline {
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-bottom: 24px;
+            font-size: 1.3rem;
+            color: var(--sage);
             font-weight: 300;
+            letter-spacing: 0.02em;
         }
 
-        .resume-link {
-            text-align: center;
-            margin-bottom: 48px;
+        .quick-links {
+            display: flex;
+            gap: 24px;
+            margin-top: 24px;
         }
 
-        .resume-link a {
-            color: var(--accent);
+        .quick-links a {
+            color: var(--cream);
+            background: var(--forest);
             text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 6px;
             font-weight: 500;
-            transition: opacity 0.2s ease;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: inline-block;
         }
 
-        .resume-link a:hover {
-            opacity: 0.7;
+        .quick-links a:hover {
+            background: var(--accent-green);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 77, 46, 0.2);
+        }
+
+        .quick-links a.secondary {
+            background: transparent;
+            color: var(--forest);
+            border: 2px solid var(--forest);
+        }
+
+        .quick-links a.secondary:hover {
+            background: var(--forest);
+            color: var(--cream);
         }
 
         section {
-            margin-bottom: 56px;
+            margin-bottom: 72px;
         }
 
         h2 {
-            font-family: 'Crimson Pro', serif;
-            font-size: 1.75rem;
+            font-family: 'Literata', serif;
+            font-size: 2.2rem;
             font-weight: 600;
-            margin-bottom: 16px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid var(--border);
+            margin-bottom: 24px;
+            color: var(--forest);
+            position: relative;
+            padding-left: 24px;
+        }
+
+        h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            bottom: 8px;
+            width: 5px;
+            background: linear-gradient(180deg, var(--forest), var(--sage));
+            border-radius: 3px;
         }
 
         h3 {
-            font-size: 1rem;
-            font-weight: 500;
+            font-size: 1.1rem;
+            font-weight: 600;
             margin-bottom: 16px;
-            color: var(--text-secondary);
+            color: var(--sage);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.9rem;
         }
 
         p {
-            margin-bottom: 16px;
-            color: var(--text-secondary);
+            margin-bottom: 20px;
+            color: var(--slate);
             line-height: 1.8;
+            font-size: 1.05rem;
         }
 
-        .section-link {
-            display: inline-block;
-            color: var(--text-primary);
+        .content-card {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            border-left: 5px solid var(--sage);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .content-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+            border-left-color: var(--forest);
+        }
+
+        .section-link-block {
+            background: linear-gradient(135deg, var(--forest), var(--sage));
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-link-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .section-link-block h2 {
+            color: var(--cream);
+            margin-bottom: 16px;
+            padding-left: 0;
+        }
+
+        .section-link-block h2::before {
+            background: var(--cream);
+        }
+
+        .section-link-block p {
+            color: var(--sand);
+            margin-bottom: 24px;
+        }
+
+        .section-link-block a {
+            color: var(--cream);
+            background: rgba(255, 255, 255, 0.15);
             text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 6px;
             font-weight: 500;
-            transition: color 0.2s ease;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: 2px solid var(--cream);
         }
 
-        .section-link:hover {
-            color: var(--accent);
+        .section-link-block a:hover {
+            background: var(--cream);
+            color: var(--forest);
+            transform: translateX(4px);
         }
 
         .social-links {
             display: flex;
-            gap: 24px;
-            justify-content: center;
+            gap: 32px;
             flex-wrap: wrap;
-            padding: 32px 0;
-            border-top: 1px solid var(--border);
-            margin-top: 64px;
+            padding: 48px 0;
+            border-top: 1px solid var(--sand);
+            margin-top: 80px;
         }
 
         .social-links a {
-            color: var(--text-secondary);
+            color: var(--sage);
             text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s ease;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .social-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--forest);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
         }
 
         .social-links a:hover {
-            color: var(--accent);
+            color: var(--forest);
+        }
+
+        .social-links a:hover::after {
+            transform: scaleX(1);
         }
 
         footer {
             text-align: center;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            margin-top: 32px;
-            opacity: 0.7;
+            color: var(--sage);
+            font-size: 0.9rem;
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid var(--sand);
         }
 
         @media (max-width: 768px) {
             .container {
-                padding: 40px 20px;
+                padding: 60px 24px 40px;
+            }
+
+            .avatar-section {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 24px;
             }
 
             h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
             h2 {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
+            }
+
+            .quick-links {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .quick-links a {
+                text-align: center;
+            }
+
+            .social-links {
+                gap: 20px;
             }
         }
     </style>
 </head>
 <body>
+    <div class="header-accent"></div>
+    
     <div class="container">
-        <img src="images/avatar.jpg" alt="Your Name" class="avatar">
-        
-        <h1>Your Name</h1>
-        <p class="tagline">Developer. Designer. Creator.</p>
-        
-        <div class="resume-link">
-            <a href="resume.pdf">Resume</a>
+        <div class="hero">
+            <div class="avatar-section">
+                <img src="images/avatar.jpg" alt="Roshni Vora" class="avatar">
+                <div class="name-title">
+                    <h1>Roshni Vora</h1>
+                    <p class="tagline">Energy & Environmental Policy Analyst</p>
+                </div>
+            </div>
+            
+            <div class="quick-links">
+                <a href="resume.pdf">View Resume</a>
+                <a href="mailto:your.email@example.com" class="secondary">Get in Touch</a>
+            </div>
         </div>
 
         <section>
-            <h2>About Me</h2>
-            <h3>Your Background or Education</h3>
-            <p>
-                Hi there! My name is [Your Name] and I'm a [Your Role/Title]. 
-                I love meeting new people, learning about new opportunities, and discussing creative 
-                solutions to pressing, everyday problems. If you do too, please reach out - I'd love to chat!
-            </p>
-            <p>
-                Outside of work, I enjoy [your hobbies]. The future holds an endless number of 
-                challenges for our beautiful world, and I'm excited to be part of the solution.
-            </p>
+            <div class="content-card">
+                <h3>About Me</h3>
+                <p>
+                    Hi! I'm Roshni, an energy and environmental policy analyst passionate about creating 
+                    data-driven solutions for our planet's most pressing challenges. I combine analytical 
+                    rigor with policy expertise to drive meaningful change in sustainability and clean energy.
+                </p>
+                <p>
+                    My work focuses on the intersection of environmental policy, energy systems, and data 
+                    analytics—translating complex data into actionable insights that inform better policy 
+                    decisions and advance climate action.
+                </p>
+                <p>
+                    Outside of work, I enjoy [your hobbies]. I believe in a future where sustainable 
+                    energy is accessible to all, and I'm committed to being part of that transformation.
+                </p>
+            </div>
         </section>
 
         <section>
-            <h2><a href="experience.html" class="section-link">Experience</a></h2>
+            <div class="section-link-block">
+                <h2>Experience</h2>
+                <p>Explore my professional journey in energy policy, environmental analytics, and sustainability initiatives.</p>
+                <a href="experience.html">View Experience →</a>
+            </div>
         </section>
 
         <section>
-            <h2><a href="projects.html" class="section-link">Projects</a></h2>
+            <div class="section-link-block">
+                <h2>Projects</h2>
+                <p>Data-driven research and policy analysis projects focused on clean energy, climate change, and environmental justice.</p>
+                <a href="projects.html">View Projects →</a>
+            </div>
         </section>
 
         <div class="social-links">
             <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
-            <a href="https://github.com/yourusername">GitHub</a>
+            <a href="https://github.com/roshnivora">GitHub</a>
             <a href="mailto:your.email@example.com">Email</a>
             <a href="https://twitter.com/yourhandle">Twitter</a>
         </div>
 
         <footer>
-            © 2024 Your Name
+            © 2024 Roshni Vora · Building a sustainable future through data and policy
         </footer>
     </div>
 </body>
