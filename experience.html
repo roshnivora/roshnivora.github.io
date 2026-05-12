@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - Roshni Vora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Literata:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --forest: #1a4d2e;
+            --sage: #4f6f52;
+            --earth: #8b7355;
+            --sand: #e8dcc4;
+            --cream: #faf8f3;
+            --charcoal: #2d2d2d;
+            --slate: #5a5a5a;
+            --accent-green: #2d5f3f;
+            --accent-amber: #d4a574;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            color: var(--charcoal);
+            background: var(--cream);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .header-accent {
+            height: 6px;
+            background: linear-gradient(90deg, var(--forest) 0%, var(--sage) 50%, var(--earth) 100%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 32px 60px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--sage);
+            text-decoration: none;
+            margin-bottom: 32px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--forest);
+            transform: translateX(-4px);
+        }
+
+        .page-header {
+            margin-bottom: 64px;
+            padding-bottom: 32px;
+            border-bottom: 2px solid var(--sage);
+            position: relative;
+        }
+
+        .page-header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 120px;
+            height: 2px;
+            background: var(--forest);
+        }
+
+        h1 {
+            font-family: 'Literata', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--forest);
+            margin-bottom: 16px;
+            letter-spacing: -0.03em;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--slate);
+        }
+
+        .experience-item {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            border-left: 5px solid var(--sage);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            margin-bottom: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+            border-left-color: var(--forest);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .job-title {
+            font-family: 'Literata', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--forest);
+            margin-bottom: 4px;
+        }
+
+        .company {
+            font-size: 1.1rem;
+            color: var(--sage);
+            font-weight: 500;
+        }
+
+        .date-range {
+            color: var(--slate);
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+
+        .description {
+            color: var(--slate);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .responsibilities {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .responsibilities li {
+            color: var(--slate);
+            padding-left: 24px;
+            position: relative;
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .responsibilities li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--sage);
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--sage);
+            font-size: 0.9rem;
+            margin-top: 80px;
+            padding-top: 32px;
+            border-top: 1px solid var(--sand);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 60px 24px 40px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .job-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-accent"></div>
+    
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+
+        <div class="page-header">
+            <h1>Experience</h1>
+            <p class="subtitle">My professional journey in energy and environmental policy</p>
+        </div>
+
+        <!-- Experience Item 1 -->
+        <div class="experience-item">
+            <div class="job-header">
+                <div>
+                    <h2 class="job-title">Your Job Title</h2>
+                    <p class="company">Company Name</p>
+                </div>
+                <span class="date-range">Jan 2023 - Present</span>
+            </div>
+            <p class="description">
+                Brief description of your role and what the company does. Focus on your main responsibilities
+                and the impact of your work.
+            </p>
+            <ul class="responsibilities">
+                <li>Key accomplishment or responsibility with measurable impact</li>
+                <li>Another important achievement or project you led</li>
+                <li>Technical skills or tools you used regularly</li>
+                <li>Collaboration with teams or stakeholders</li>
+            </ul>
+        </div>
+
+        <!-- Experience Item 2 -->
+        <div class="experience-item">
+            <div class="job-header">
+                <div>
+                    <h2 class="job-title">Previous Job Title</h2>
+                    <p class="company">Previous Company</p>
+                </div>
+                <span class="date-range">Jun 2021 - Dec 2022</span>
+            </div>
+            <p class="description">
+                Description of this role and your contributions.
+            </p>
+            <ul class="responsibilities">
+                <li>Major accomplishment or project</li>
+                <li>Skills developed or tools mastered</li>
+                <li>Impact on the organization or team</li>
+            </ul>
+        </div>
+
+        <!-- Experience Item 3 -->
+        <div class="experience-item">
+            <div class="job-header">
+                <div>
+                    <h2 class="job-title">Earlier Role</h2>
+                    <p class="company">Company Name</p>
+                </div>
+                <span class="date-range">Aug 2019 - May 2021</span>
+            </div>
+            <p class="description">
+                What you did in this position and why it mattered.
+            </p>
+            <ul class="responsibilities">
+                <li>Key responsibility or achievement</li>
+                <li>Projects you worked on</li>
+                <li>Skills gained</li>
+            </ul>
+        </div>
+
+        <footer>
+            © 2024 Roshni Vora
+        </footer>
+    </div>
+</body>
+</html>
